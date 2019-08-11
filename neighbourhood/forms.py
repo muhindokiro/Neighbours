@@ -19,12 +19,13 @@ class NewPostForm(forms.ModelForm):
         fields = ('post',)
         exclude = ['pub_date']
 
-        
+
 class NewProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('profession','status', 'image', 'contact', 'neighbourhood')
         exclude = ['pub_date']
+        
         
 class RegisterForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
