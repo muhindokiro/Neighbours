@@ -117,7 +117,6 @@ ul {
     top: 0;
     bottom: 0;
     left: 0;
-    /*rig 0;*/
     margin: auto;
     height: 280px;
     width: 10%;
@@ -136,10 +135,6 @@ ul li {
 
 .title {
     font-size: 38px;
-}
-
-.hint a:hover {
-    color: #FFF;
 }
 
 .page .icon {
@@ -178,16 +173,4 @@ ul li {
 #t4:target .page#p4 .icon {
     transform: translateX(0) !important;
     transition-delay: 1s;
-}
-
-.credit {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    font-size: 10px;
-}
-
-.credit a {
-    color: #fff
 }
