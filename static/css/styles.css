@@ -117,7 +117,7 @@ ul {
     top: 0;
     bottom: 0;
     left: 0;
-    /*right 0;*/
+    /*rig 0;*/
     margin: auto;
     height: 280px;
     width: 10%;
@@ -129,14 +129,8 @@ ul li {
     margin: 30px 0;
 }
 
-a {
-    text-decoration: none;
-    font-family: open sans, sans-serif;
-}
-
 .title,
 .hint {
-    font-family: open sans, sans-serif;
     display: block;
 }
 
