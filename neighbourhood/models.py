@@ -26,8 +26,6 @@ class NeighbourHood(models.Model):
         return neighbourhood
 
 
-
-
 class Post(models.Model):
     post = models.CharField(max_length =60)
     pub_date = models.DateTimeField(auto_now_add=True)
