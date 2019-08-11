@@ -6,7 +6,7 @@ def send_welcome_email(name,receiver):
     subject = 'Welcome to Majirani'
     sender = 'blaize1143@gmail.com'
 
-    #passing in the context vairables
+    #passing the context vairables
     text_content = render_to_string('email/neighbourmail.txt',{"name": name})
     html_content = render_to_string('email/neighbourmail.html',{"name": name})
 
