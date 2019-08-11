@@ -1,0 +1,46 @@
+{%extends 'base2.html'%} 
+{% block content %}
+<br>
+<a href="{%url 'home' %}"><p style="font-size:18px; text-align:center;"><b>Back to home page</b></p></a>
+
+<div class="container">
+  <div class="row">
+  <br>
+    {% if neighbourhoods %}
+      <h2 style='color:black;'>Found {{ neighbourhoods|length }} neighbourhood by the name {{message}}</h2>
+    {% else %}
+      <h2> Found 0 neighbourhoods by the name {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+  {% if neighbourhoods %}
+    {% for neighbourhood in neighbourhoods %}
+      <div class="col-sm-6 col-md-3">
+          <h1 style='color:black;'>{{neighbourhood.neighbourhood_name}}</h1>
+      <div class="container-fluid col-md-4 hood-section text-center">
+    <div class="row">
+        <div class="">
+            <div class="card ml-4 mt-4" style="width: 40rem;height: 37rem;">
+                <div class="view overlay zoom">
+                <p style="font-size:18px; text-align:center;"><b>{{ neighbourhood.neighbourhood_name }}</b></p>
+                    <a><img class="card-img-top" height="250px"  src="{{neighbourhood.image.url}}" alt="Card image cap"></a>
+                <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">    
+    </div>
+                </div>
+                <div class="card-body">
+                <p class='text-center' style="font-size: 15px">{{neighbourhood.location}}</p>
+                <p class='text-center' style="font-size: 15px">{{neighbourhood.occupants}} occupants</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{%extends 'base2.html'%}
+{% load bootstrap3 %}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+{% block content %}
+{{block.super}}
+<h1 class='text-center'> NEIGHBOURHOODS </h1>
+
+{% for neighbourhood_item in neighbourhood %}
+
+<div class="container-fluid col-md-4 hood-section text-center">
+    <div class="row">
+        <div class="">
+            <div class="card ml-4 mt-4" style="width: 40rem;height: 37rem;">
+                <div class="view overlay zoom">
+                <p style="font-size:18px; text-align:center;"><b>{{ neighbourhood_item.neighbourhood_name }}</b></p>
+                    <a><img class="card-img-top" height="250px"  src="{{neighbourhood_item.image.url}}" alt="Card image cap"></a>
+                <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">    
+    </div>
+                </div>
+                <div class="card-body">
+                <p class='text-center' style="font-size: 15px">{{neighbourhood_item.location}}</p>
+                <p class='text-center' style="font-size: 15px">{{neighbourhood_item.occupants}} occupants</p>
+                <a href="{%url 'view' %}"><i class="icon fas fa-eye fa-2x"><span class="title">View</span></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

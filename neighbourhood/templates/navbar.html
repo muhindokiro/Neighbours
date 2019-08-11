@@ -1,0 +1,40 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<div class="ct" id="t1">
+ <div class="ct" id="t2">
+   <div class="ct" id="t3">
+     <div class="ct" id="t4">
+<section >  
+ <ul >
+   <a href="#t1"><li class="icon fa fa-home" id="uno"></li></a>
+   <a href="#t2"><li class="icon fa fa-user" id="dos"></li></a>
+   <a href="#t3"><li class="icon fas fa-users" id="tres"></li></a>
+   <a href="#t4"><li class="icon fas fa-sign-out-alt" id="cuatro"></li></a>
+ </ul>
+  <div style='background-repeat: no-repeat; background-size: cover;' class="page" id="p1">
+     <a href="{%url 'home' %}"><i class="icon fa fa-home"><span style="font-family: 'Courgette', cursive;" class="title">Click the icon to view available neighbourhoods.</span></i></a>
+  </div>
+  <div class="page" id="p2">
+    <a href="{%url 'profile' %}"><i class="icon fa fa-user"><span style="font-family: 'Courgette', cursive;" class="title">Create a profile and join new neighbourhoods.</span></i></a>
+  </div>  
+  <div class="page" id="p3">
+    <li class="icon fas fa-users "><span style="font-family: 'Courgette', cursive;" class="title">About Us</span></li>
+  </div>
+  {% if user.is_authenticated %}
+  <div style='background-repeat: no-repeat;' class="page" id="p4">
+   <a href="/logout"><i class="icon fas fa-sign-out-alt"><span style="font-family: 'Courgette', cursive;" class="title">Log Out</span></i></a>
+  </div>
+  {% else %} 
+  <div style='background-repeat: no-repeat;' class="page" id="p4">
+   <a href="/accounts/login"><i class="icon fas fa-sign-out-alt"><span style="font-family: 'Courgette', cursive;" class="title">Log In</span></i></a>
+  </div>
+  {% endif %} 
+</section>
+       
+     </div>
+     </div>
+   </div>
+  </div>

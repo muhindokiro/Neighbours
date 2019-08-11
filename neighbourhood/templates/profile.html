@@ -1,0 +1,82 @@
+{%extends 'base2.html'%}
+{% load bootstrap3 %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+{% block content %}
+
+{{block.super}}
+
+{% comment %} {% for profile in profile %} {% endcomment %}
+
+<div style='font-size:20px;' class="container">
+
+    <div class="span3 well">
+        <center>
+        <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="{{image.url}}" name="aboutme" width="140" height="140" class="img-circle"></a>
+        <h3>{{user.username}}</h3>
+        <em>click my profile photo for more</em><br>
+        <br>
+        <a style='font-size:20px;' href="{%url 'new-profile'%}">Update Profile</a>        
+		</center>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="myModalLabel">More About {{user.username}}</h4>
+                    </div>
+                <div class="modal-body">
+                    <center>
+                    <img src="{{image.url}}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                    <h3 class="media-heading">{{user.username}}<small> {{ neighbourhood }}</small></h3>
+                    <span><strong>Contacts: <p class="label label-warning">{{ contact }}</p> </strong></span>
+                    </center>
+                    <center>
+                    <p class="text-left"><strong>Profession: {{ profession }}</strong></p>
+                    </center>
+                    <center>
+                    <p class="text-left"><strong>Status: {{ status }} </strong></p>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                    <p class="text-left"><strong>Updated </strong> {{ pub_date|timesince }} ago</p>
+                    <button style='font-size:12px;' type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+{% for neighbourhood_item in neighbourhood %}
+
+<div class="container-fluid col-md-4 hood-section text-center">
+    <div class="row">
+        <div class="">
+            <div class="card ml-4 mt-4" style="width: 40rem;height: 37rem;">
+                <div class="view overlay zoom">
+                <p style="font-size:18px; text-align:center;"><b>{{ neighbourhood_item.neighbourhood_name }}</b></p>
+                    <a><img class="card-img-top" height="250px"  src="{{neighbourhood_item.image.url}}" alt="Card image cap"></a>
+                <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">    
+    </div>
+                </div>
+                <div class="card-body">
+                <p class='text-center' style="font-size: 15px">{{neighbourhood_item.location}}</p>
+                <p class='text-center' style="font-size: 15px">{{neighbourhood_item.occupants}} occupants</p>
+                <input style="font-size:12px;" type="submit" class="btn btn-success btn-lg" value="Join">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% comment %} {% endfor %} {% endcomment %}
+{% endblock %}
