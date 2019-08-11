@@ -138,10 +138,6 @@ ul li {
     font-size: 38px;
 }
 
-.hint {
-    font-size: 13px;
-}
-
 .hint a {
     color: #EFFF06;
     transition: all 250ms easet-out;
