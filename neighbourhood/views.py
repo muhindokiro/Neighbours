@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import NewNeighbourHoodForm,NewsLetterForm,RegisterForm,NewPostForm,NewProfileForm
 from django.core.exceptions import ObjectDoesNotExist
 
-# Create your views here.
+# Create you views here.
 # @login_required(login_url='/accounts/login/')
 def index(request):
     return render(request, 'index.html')
