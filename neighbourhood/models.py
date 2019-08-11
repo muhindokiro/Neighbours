@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 import datetime as dt
 
-# Create you models here.
+# Create yo models here.
 class NeighbourHood(models.Model):
     neighbourhood_name = models.CharField(max_length =60)
     location = models.CharField(max_length =60)
