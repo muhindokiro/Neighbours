@@ -13,7 +13,7 @@ section,
     padding: 0;
     transition: all 1s cubic-bezier(.5, -0.005, 0.2, 1) !important;
     -webkit-transition: all 1s cubic-bezier(.5, -0.005, 0.2, 1) !important;
-    color: #fff;
+    color: white;
     background: #374046;
     overflow: hidden;
 }
