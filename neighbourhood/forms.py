@@ -12,13 +12,14 @@ class NewNeighbourHoodForm(forms.ModelForm):
         fields = ('neighbourhood_name', 'image', 'location', 'occupants')
         exclude = ['pub_date']
 
-        
+
 class NewPostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('post',)
         exclude = ['pub_date']
 
+        
 class NewProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
