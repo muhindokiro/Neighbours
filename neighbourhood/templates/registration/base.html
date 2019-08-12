@@ -12,6 +12,9 @@
   <title>{{title}}</title>
   {%endif%}
 </head>
+{% block styles %}
+    {% bootstrap_css %}
+  {% endblock %}
 <body>
 
   {% block content %}  {%endblock%}
