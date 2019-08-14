@@ -80,6 +80,20 @@ def new_profile(request):
         form = NewProfileForm()
     return render(request, 'new_profile.html', {"form": form})
 
+@login_required(login_url='/accounts/login/')
+def update_profile(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.save()
+        return redirect('profile')
+    else:
+        form = NewProfileForm()
+    return render(request, 'update_profile.html', {"form": form})
+
+
 def convert_dates(dates):
     # Function that gets the weekday number for the date.
     day_number = dt.date.weekday(dates)

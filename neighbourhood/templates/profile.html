@@ -8,17 +8,18 @@
 
 {{block.super}}
 
-{% comment %} {% for profile in profile %} {% endcomment %}
+{% for profile_item in profile %}
 
 <div style='font-size:20px;' class="container">
 
     <div class="span3 well">
         <center>
-        <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="{{image.url}}" name="aboutme" width="140" height="140" class="img-circle"></a>
+        <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="{{profile_item.image.url}}" name="aboutme" width="140" height="140" class="img-circle"></a>
         <h3>{{user.username}}</h3>
         <em>click my profile photo for more</em><br>
         <br>
-        <a style='font-size:20px;' href="{%url 'new-profile'%}">Update Profile</a>        
+        <a style='font-size:20px;' href="{%url 'new-profile'%}">Create Profile</a>
+        <span style='margin-left: 20px;'><a href="{%url 'update-profile'%}">Update Profile</a></span>       
 		</center>
     </div>
 
@@ -32,20 +33,20 @@
                     </div>
                 <div class="modal-body">
                     <center>
-                    <img src="{{image.url}}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
-                    <h3 class="media-heading">{{user.username}}<small> {{ neighbourhood }}</small></h3>
-                    <span><strong>Contacts: <p class="label label-warning">{{ contact }}</p> </strong></span>
+                    <img src="{{profile_item.image.url}}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                    <h3 class="media-heading">{{user.username}}<small> {{ profile_item.neighbourhood }}</small></h3>
+                    <span><strong>Contacts: <p class="label label-warning">{{ profile_item.contact }}</p> </strong></span>
                     </center>
                     <center>
-                    <p class="text-left"><strong>Profession: {{ profession }}</strong></p>
+                    <p class="text-left"><strong>Profession: {{ profile_item.profession }}</strong></p>
                     </center>
                     <center>
-                    <p class="text-left"><strong>Status: {{ status }} </strong></p>
+                    <p class="text-left"><strong>Status: {{ profile_item.status }} </strong></p>
                     </center>
                 </div>
                 <div class="modal-footer">
                     <center>
-                    <p class="text-left"><strong>Updated </strong> {{ pub_date|timesince }} ago</p>
+                    <p class="text-left"><strong>Updated </strong> {{ profile_item.pub_date|timesince }} ago</p>
                     <button style='font-size:12px;' type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </center>
                 </div>
@@ -54,5 +55,5 @@
     </div>
 </div>
 
-{% comment %} {% endfor %} {% endcomment %}
+{% endfor %} 
 {% endblock %}

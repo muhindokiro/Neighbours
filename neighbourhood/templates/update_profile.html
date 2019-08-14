@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>New Hood</title>
+  <title>Update Profile</title>
 
   {{form.media}}
 
@@ -31,10 +31,10 @@
 <div class="card" style="width: 60rem; height: 38rem; margin-left: 30%; margin-top: 10%;">
   <!-- Card body -->
   <div class="card-body">
-  <form  action="{%url 'new-profile' %}" method="post" enctype="multipart/form-data">
+  <form  action="{%url 'update-profile' %}" method="post" enctype="multipart/form-data">
     {%csrf_token%}
     {% bootstrap_form form%}
-    <input style="background-image: url(/static/home.jpg); font-size:15px;" type="submit" class="btn btn-success btn-lg" value="Create Profile">
+    <input style="background-image: url(/static/home.jpg); font-size:15px;" type="submit" class="btn btn-success btn-lg" value="Update">
   </form>
   </div>
   </div>

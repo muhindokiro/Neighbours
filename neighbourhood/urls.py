@@ -10,7 +10,8 @@ urlpatterns=[
     url(r'^home$', views.home, name='home'),
     url(r'^view$', views.view, name='view'),
     url(r'^new/neighbourhood$', views.new_hood, name='new-hood'),
-    url(r'^new/profile$', views.new_profile, name='new-profile')
+    url(r'^new/profile$', views.new_profile, name='new-profile'),
+    url(r'^update/profile$', views.update_profile, name='update-profile')
 ]
 
 if settings.DEBUG:
