@@ -8,7 +8,8 @@
    <div class="ct" id="t3">
      <div class="ct" id="t4">
      
-<section >  
+<section>
+<div class="container" style="height: 500px;">  
  <ul >
    <a href="#t1"><li class="icon fa fa-home" id="uno"></li></a>
    <a href="#t2"><li class="icon fa fa-user" id="dos"></li></a>
@@ -18,10 +19,10 @@
   <div style='background-repeat: no-repeat; background-size: cover;' class="page" id="p1">
      <a href="{%url 'home' %}"><i class="icon fa fa-home"><span style="font-family: 'Courgette', cursive;" class="title">Click the icon to view available neighbourhoods.</span></i></a>
   </div>
-  <div class="page" id="p2">
+  <div style='background-repeat: no-repeat; background-size: cover;' class="page" id="p2">
     <a href="{%url 'profile' %}"><i class="icon fa fa-user"><span style="font-family: 'Courgette', cursive;" class="title">Create a profile and join new neighbourhoods.</span></i></a>
   </div>  
-  <div class="page" id="p3">
+  <div style='background-repeat: no-repeat; background-size: cover;' class="page" id="p3">
     <li class="icon fas fa-users "><span style="font-family: 'Courgette', cursive;" class="title">About Us</span></li>
   </div>
   {% if user.is_authenticated %}
@@ -33,6 +34,7 @@
    <a href="/accounts/login"><i class="icon fas fa-sign-out-alt"><span style="font-family: 'Courgette', cursive;" class="title">Log In</span></i></a>
   </div>
   {% endif %} 
+  </div>
 </section>
        
      </div>

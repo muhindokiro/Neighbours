@@ -18,36 +18,27 @@ section,
     overflow: hidden;
 }
 
-section {
-    width: 400%;
-}
-
 .page {
-    position: absolute;
+    position: fixed;
 }
 
 #p1 {
-    left: 100%;
+    left: 105%;
     background-image: url(/static/home.jpg);
 }
 
 #p2 {
-    left: 100%;
+    left: 105%;
     background-image: url(/static/profile.jpg);
 }
 
 #p3 {
-    left: 200%;
+    left: 205%;
     background-image: url(/static/aboutus.jpg);
 }
 
 #p4 {
     left: 300%;
-}
-
-ul {
-    position: fixed;
-    z-index: 1;
 }
 
 #t1:target .page#p1 {
@@ -114,12 +105,12 @@ ul .icon:hover {
 
 ul {
     position: fixed;
-    top: 0;
+    top: 25%;
     bottom: 0;
     left: 0;
     margin: auto;
-    height: 280px;
-    width: 10%;
+    /* height: 40px; */
+    width: 4%;
     padding: 0;
     text-align: center;
 }
